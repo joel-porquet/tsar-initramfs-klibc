@@ -1,0 +1,59 @@
+## create root tree
+dir /bin 0755 0 0
+dir /dev 0755 0 0
+dir /etc 0755 0 0
+dir /lib 0755 0 0
+dir /mnt 0755 0 0
+
+## fill /dev
+nod /dev/console    0644 0 0 c 5 1
+nod /dev/null       0666 0 0 c 1 3
+nod /dev/ioc0       0644 0 0 b 254 0
+nod /dev/ioc0p1     0644 0 0 b 254 1
+
+## fill /lib with libklibc.so
+file /lib/klibc-XXXXXXXXXX.so ${PWD}/klibc/lib/klibc-XXXXXXXXXX.so 0755 0 0
+
+## fill /bin
+file /bin/cat           ${PWD}/klibc/usr/lib/klibc/bin/cat          0755 0 0
+file /bin/chroot        ${PWD}/klibc/usr/lib/klibc/bin/chroot       0755 0 0
+file /bin/cpio          ${PWD}/klibc/usr/lib/klibc/bin/cpio         0755 0 0
+file /bin/dd            ${PWD}/klibc/usr/lib/klibc/bin/dd           0755 0 0
+file /bin/dmesg         ${PWD}/klibc/usr/lib/klibc/bin/dmesg        0755 0 0
+file /bin/false         ${PWD}/klibc/usr/lib/klibc/bin/false        0755 0 0
+file /bin/fstype        ${PWD}/klibc/usr/lib/klibc/bin/fstype       0755 0 0
+file /bin/gunzip        ${PWD}/klibc/usr/lib/klibc/bin/gunzip       0755 0 0
+file /bin/gzip          ${PWD}/klibc/usr/lib/klibc/bin/gzip         0755 0 0
+file /bin/halt          ${PWD}/klibc/usr/lib/klibc/bin/halt         0755 0 0
+file /bin/ipconfig      ${PWD}/klibc/usr/lib/klibc/bin/ipconfig     0755 0 0
+file /bin/kill          ${PWD}/klibc/usr/lib/klibc/bin/kill         0755 0 0
+file /bin/kinit         ${PWD}/klibc/usr/lib/klibc/bin/kinit        0755 0 0
+file /bin/kinit.shared  ${PWD}/klibc/usr/lib/klibc/bin/kinit.shared 0755 0 0
+file /bin/ln            ${PWD}/klibc/usr/lib/klibc/bin/ln           0755 0 0
+file /bin/losetup       ${PWD}/klibc/usr/lib/klibc/bin/losetup      0755 0 0
+file /bin/ls            ${PWD}/klibc/usr/lib/klibc/bin/ls           0755 0 0
+file /bin/minips        ${PWD}/klibc/usr/lib/klibc/bin/minips       0755 0 0
+file /bin/mkdir         ${PWD}/klibc/usr/lib/klibc/bin/mkdir        0755 0 0
+file /bin/mkfifo        ${PWD}/klibc/usr/lib/klibc/bin/mkfifo       0755 0 0
+file /bin/mknod         ${PWD}/klibc/usr/lib/klibc/bin/mknod        0755 0 0
+file /bin/mount         ${PWD}/klibc/usr/lib/klibc/bin/mount        0755 0 0
+file /bin/mv            ${PWD}/klibc/usr/lib/klibc/bin/mv           0755 0 0
+file /bin/nfsmount      ${PWD}/klibc/usr/lib/klibc/bin/nfsmount     0755 0 0
+file /bin/nuke          ${PWD}/klibc/usr/lib/klibc/bin/nuke         0755 0 0
+file /bin/pivot_root    ${PWD}/klibc/usr/lib/klibc/bin/pivot_root   0755 0 0
+file /bin/poweroff      ${PWD}/klibc/usr/lib/klibc/bin/poweroff     0755 0 0
+file /bin/readlink      ${PWD}/klibc/usr/lib/klibc/bin/readlink     0755 0 0
+file /bin/reboot        ${PWD}/klibc/usr/lib/klibc/bin/reboot       0755 0 0
+file /bin/resume        ${PWD}/klibc/usr/lib/klibc/bin/resume       0755 0 0
+file /bin/run-init      ${PWD}/klibc/usr/lib/klibc/bin/run-init     0755 0 0
+file /bin/sh            ${PWD}/klibc/usr/lib/klibc/bin/sh.shared    0755 0 0
+file /bin/sleep         ${PWD}/klibc/usr/lib/klibc/bin/sleep        0755 0 0
+file /bin/sync          ${PWD}/klibc/usr/lib/klibc/bin/sync         0755 0 0
+file /bin/true          ${PWD}/klibc/usr/lib/klibc/bin/true         0755 0 0
+file /bin/umount        ${PWD}/klibc/usr/lib/klibc/bin/umount       0755 0 0
+file /bin/uname         ${PWD}/klibc/usr/lib/klibc/bin/uname        0755 0 0
+file /bin/zcat          ${PWD}/klibc/usr/lib/klibc/bin/zcat         0755 0 0
+
+## init file
+slink /init bin/sh 0755 0 0
+
