@@ -1,9 +1,9 @@
-KERNEL_BASE=../linux
+KERNEL_BASE?=../linux
 KERNEL_USR=$(KERNEL_BASE)/usr
 
-KLIBC_BASE=../klibc
+KLIBC_BASE?=../klibc
 
-PREFIX=mipsel-unknown-elf-
+PREFIX?=mipsel-unknown-elf-
 
 all: klibc-install cpio-gen
 
