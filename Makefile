@@ -3,7 +3,7 @@ KERNEL_USR=$(KERNEL_BASE)/usr
 
 KLIBC_BASE?=../klibc
 
-PREFIX?=mipsel-unknown-elf-
+CT_PREFIX?=mipsel-unknown-elf-
 
 all: klibc-install cpio-gen
 
@@ -11,7 +11,7 @@ klibc-install:
 	make -C $(KLIBC_BASE) \
 		KLIBCKERNELSRC=$(KERNEL_BASE) \
 		KLIBCARCH=tsar \
-		CROSS_COMPILE=$(PREFIX) \
+		CROSS_COMPILE=$(CT_PREFIX) \
 		INSTALLROOT=$(PWD)/klibc install
 
 cpio-gen: initramfs_list
